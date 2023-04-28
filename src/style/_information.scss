@@ -10,7 +10,9 @@
         text-align: center
     }
 
-    hgroup.main
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - reference .hgroup class instead of deprecated <hgroup> element
+    .hgroup.main
     {
         margin: 0 0 20px 0;
         a
