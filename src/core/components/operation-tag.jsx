@@ -67,10 +67,12 @@ export default class OperationTag extends React.Component {
     let isShownKey = ["operations-tag", tag]
     let showTag = layoutSelectors.isShown(isShownKey, docExpansion === "full" || docExpansion === "list")
 
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - use <h2> to ensure heading levels are properly structured 
     return (
       <div className={showTag ? "opblock-tag-section is-open" : "opblock-tag-section"} >
 
-        <h3
+        <h2
           onClick={() => layoutActions.show(isShownKey, !showTag)}
           className={!tagDescription ? "opblock-tag no-desc" : "opblock-tag"}
           id={isShownKey.map(v => escapeDeepLinkPath(v)).join("-")}
@@ -111,7 +113,7 @@ export default class OperationTag extends React.Component {
               <use href={showTag ? "#large-arrow-up" : "#large-arrow-down"} xlinkHref={showTag ? "#large-arrow-up" : "#large-arrow-down"} />
             </svg>
           </button>
-        </h3>
+        </h2>
 
         <Collapse isOpened={showTag}>
           {children}

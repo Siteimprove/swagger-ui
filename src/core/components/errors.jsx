@@ -35,12 +35,14 @@ export default class Errors extends React.Component {
 
     let sortedJSErrors = allErrorsToDisplay.sortBy(err => err.get("line"))
 
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - use <div> instead of deprecated <hgroup> element
     return (
       <pre className="errors-wrapper">
-        <hgroup className="error">
+        <div className="hgroup error">
           <h4 className="errors__title">Errors</h4>
           <button className="btn errors__clear-btn" onClick={ toggleVisibility }>{ isVisible ? "Hide" : "Show" }</button>
-        </hgroup>
+        </div>
         <Collapse isOpened={ isVisible } animated >
           <div className="errors">
             { sortedJSErrors.map((err, i) => {
