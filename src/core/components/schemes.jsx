@@ -39,10 +39,12 @@ export default class Schemes extends React.Component {
   render() {
     let { schemes, currentScheme } = this.props
 
+    // A11Y NOTE: [A] 4.1.2 Name, Role, Value
+    // - add aria-label to schemes selector
     return (
       <label htmlFor="schemes">
         <span className="schemes-title">Schemes</span>
-        <select onChange={ this.onChange } value={currentScheme}>
+        <select onChange={ this.onChange } value={currentScheme} aria-label="Schemes">
           { schemes.valueSeq().map(
             ( scheme ) => <option value={ scheme } key={ scheme }>{ scheme }</option>
           ).toArray()}

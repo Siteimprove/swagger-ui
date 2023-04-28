@@ -142,7 +142,9 @@ export default class Topbar extends React.Component {
     }
     else {
       formOnSubmit = this.downloadUrl
-      control.push(<input className={classNames.join(" ")} type="text" onChange={ this.onUrlChange } value={this.state.url} disabled={isLoading} />)
+      // A11Y NOTE: [A] 4.1.2 Name, Role, Value
+      // -  add aria-label for download url text input
+      control.push(<input className={classNames.join(" ")} id="download-url-input" type="text" onChange={ this.onUrlChange } value={this.state.url} disabled={isLoading} aria-label="OpenAPI Specification URL" />)
       control.push(<Button className="download-url-button" onClick={ this.downloadUrl }>Explore</Button>)
     }
 
