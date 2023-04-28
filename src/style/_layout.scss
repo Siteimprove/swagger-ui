@@ -1,3 +1,7 @@
+html, body {
+    font-size: 16px;
+}
+
 .wrapper
 {
     width: 100%;
@@ -100,7 +104,8 @@
 
     >div
     {
-        overflow: hidden;
+        // A11Y NOTE: [AA] 1.4.4 Resize text
+        // - remove overflow restrictions
         white-space: nowrap;
         text-overflow: ellipsis;
         flex: 1 1 150px;
@@ -988,6 +993,11 @@ a.nostyle {
     {
         font-weight: bold;
     }
+}
+
+p 
+{
+    line-height: 1.5;
 }
 
 span
