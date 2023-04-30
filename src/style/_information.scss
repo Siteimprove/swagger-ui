@@ -26,7 +26,11 @@
     }
     p, li, table
     {
+        // A11Y NOTE: [AAA] 1.4.8 Visual Presentation
+        // - use a non-fixed font-size
+        // - this needs to be addressed globally
         font-size: 14px;
+        font-size: 0.875rem;
 
         @include text_body();
     }
