@@ -133,6 +133,9 @@ export default class Parameters extends Component {
       .reduce((acc, x) => acc.concat(x), [])
 
     const retainRequestBodyValueFlagForOperation = (f) => oas3Actions.setRetainRequestBodyValueFlag({ value: f, pathMethod })
+    
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - use <h3> instead of <h4> to ensure heading hierarchy is consistent
     return (
       <div className="opblock-section">
         <div className="opblock-section-header">
@@ -140,20 +143,20 @@ export default class Parameters extends Component {
             <div className="tab-header">
               <div onClick={() => this.toggleTab("parameters")}
                    className={`tab-item ${this.state.parametersVisible && "active"}`}>
-                <h4 className="opblock-title"><span>Parameters</span></h4>
+                <h3 className="opblock-title"><span>Parameters</span></h3>
               </div>
               {operation.get("callbacks") ?
                 (
                   <div onClick={() => this.toggleTab("callbacks")}
                        className={`tab-item ${this.state.callbackVisible && "active"}`}>
-                    <h4 className="opblock-title"><span>Callbacks</span></h4>
+                    <h3 className="opblock-title"><span>Callbacks</span></h3>
                   </div>
                 ) : null
               }
             </div>
           ) : (
             <div className="tab-header">
-              <h4 className="opblock-title">Parameters</h4>
+              <h3 className="opblock-title">Parameters</h3>
             </div>
           )}
           {allowTryItOut ? (
@@ -213,8 +216,8 @@ export default class Parameters extends Component {
           isOAS3 && requestBody && this.state.parametersVisible &&
           <div className="opblock-section opblock-section-request-body">
             <div className="opblock-section-header">
-              <h4 className={`opblock-title parameter__name ${requestBody.get("required") && "required"}`}>Request
-                body</h4>
+              <h3 className={`opblock-title parameter__name ${requestBody.get("required") && "required"}`}>Request
+                body</h3>
               <label>
                 <ContentType
                   value={oas3Selectors.requestContentType(...pathMethod)}

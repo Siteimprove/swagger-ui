@@ -116,6 +116,8 @@ export default class Operation extends PureComponent {
 
     const validationErrors = specSelectors.validationErrors([path, method])
 
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - use <h3> instead of <h4> to ensure heading hierarchy is consistent
     return (
         <div className={deprecated ? "opblock opblock-deprecated" : isShown ? `opblock opblock-${method} is-open` : `opblock opblock-${method}`} id={escapeDeepLinkPath(isShownKey.join("-"))} >
           <OperationSummary operationProps={operationProps} isShown={isShown} toggleShown={toggleShown} getComponent={getComponent} authActions={authActions} authSelectors={authSelectors} specPath={specPath} />
@@ -124,7 +126,7 @@ export default class Operation extends PureComponent {
               { (operation && operation.size) || operation === null ? null :
                 <img height={"32px"} width={"32px"} src={require("core/../img/rolling-load.svg")} className="opblock-loading-animation" />
               }
-              { deprecated && <h4 className="opblock-title_normal"> Warning: Deprecated</h4>}
+              { deprecated && <h3 className="opblock-title_normal"> Warning: Deprecated</h3>}
               { description &&
                 <div className="opblock-description-wrapper">
                   <div className="opblock-description">
@@ -135,7 +137,7 @@ export default class Operation extends PureComponent {
               {
                 externalDocsUrl ?
                 <div className="opblock-external-docs-wrapper">
-                  <h4 className="opblock-title_normal">Find more details</h4>
+                  <h3 className="opblock-title_normal">Find more details</h3>
                   <div className="opblock-external-docs">
                     {externalDocs.description &&
                       <span className="opblock-external-docs__description">
