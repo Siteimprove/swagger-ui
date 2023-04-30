@@ -1,11 +1,15 @@
 .markdown, .renderedMarkdown {
-  p, pre {
+  // A11Y NOTE: [SI] Accessibility best practices
+  // - add an alternative class for preformatted text to discourage improper <pre> use
+  p, pre, .preformatted-text {
     margin: 1em auto;
 
     word-break: break-all; /* Fallback trick */
     word-break: break-word;
   }
-  pre {
+  // A11Y NOTE: [SI] Accessibility best practices
+  // - add an alternative class for preformatted text to discourage improper <pre> use
+  pre, .preformatted-text {
     color: black;
     font-weight: normal;
     white-space: pre-wrap;
@@ -23,7 +27,9 @@
     @include text_code($info-code-font-color);
   }
 
-  pre > code {
+  // A11Y NOTE: [SI] Accessibility best practices
+  // - add an alternative class for preformatted text to discourage improper <pre> use
+  pre > code, .preformatted-text > code {
     display: block;
   }
 }
