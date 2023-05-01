@@ -451,9 +451,11 @@ html, body {
         @include method($_color-options);
     }
 
+    // A11Y NOTE: [AA] 1.4.3 Contrast (Minimum)
+    // - update opacity to increase contrast
     &.opblock-deprecated
     {
-        opacity: .6;
+        opacity: .8;
 
         @include method($_color-disabled);
     }
