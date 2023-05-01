@@ -15,6 +15,8 @@ export default class AuthorizationPopup extends React.Component {
 
     // A11Y NOTE: [A] 4.1.2 Name, Role, Value
     // - add aria-label to button used to close modal
+    // A11Y NOTE: [SI] Accessibility best practices
+    // - use <h2> for heading to ensure consistent heirarchy
     return (
       <div className="dialog-ux">
         <div className="backdrop-ux"></div>
@@ -22,7 +24,7 @@ export default class AuthorizationPopup extends React.Component {
           <div className="modal-dialog-ux">
             <div className="modal-ux-inner">
               <div className="modal-ux-header">
-                <h3>Available authorizations</h3>
+                <h2>Available authorizations</h2>
                 <button aria-label="Close" type="button" className="close-modal" onClick={ this.close }>
                   <svg width="20" height="20">
                     <use href="#close" xlinkHref="#close" />
