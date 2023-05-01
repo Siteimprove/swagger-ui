@@ -192,8 +192,10 @@ export class Select extends React.Component {
     let { allowedValues, multiple, allowEmptyValue, disabled } = this.props
     let value = this.state.value?.toJS?.() || this.state.value
 
+    // A11Y NOTE: [A] 4.1.2 Name, Role, Value
+    // - add aria-label to <select>; this should be updated to be a prop on this component
     return (
-      <select className={this.props.className} multiple={ multiple } value={value} onChange={ this.onChange } disabled={disabled} >
+      <select aria-label="Options" className={this.props.className} multiple={ multiple } value={value} onChange={ this.onChange } disabled={disabled} >
         { allowEmptyValue ? <option value="">--</option> : null }
         {
           allowedValues.map(function (item, key) {
