@@ -57,25 +57,30 @@ export default class BasicAuth extends React.Component {
     let username = this.getValue().username
     let errors = errSelectors.allErrors().filter( err => err.get("authId") === name)
 
+    // A11Y NOTE: [SI] Accessibility best practices
+    // - use <h3> for heading to ensure consistent heirarchy
+    // A11Y NOTE: [A] 4.1.2 Name, Role, Value
+    // - add htmlFor props to labels and id props to associated form fields
     return (
       <div>
-        <h4>Basic authorization<JumpToPath path={[ "securityDefinitions", name ]} /></h4>
+        <h3>Basic authorization<JumpToPath path={[ "securityDefinitions", name ]} /></h3>
         { username && <h6>Authorized</h6> }
         <Row>
           <Markdown source={ schema.get("description") } />
         </Row>
         <Row>
-          <label>Username:</label>
+          <label htmlFor="username">Username:</label>
           {
             username ? <code> { username } </code>
-                     : <Col><Input type="text" required="required" name="username" onChange={ this.onChange } autoFocus/></Col>
+                     : <Col><Input type="text" required="required" id="username" name="username" onChange={ this.onChange } autoFocus/></Col>
           }
         </Row>
         <Row>
-          <label>Password:</label>
+          <label htmlFor="password">Password:</label>
             {
               username ? <code> ****** </code>
                        : <Col><Input autoComplete="new-password"
+                                     id="password"
                                      name="password"
                                      type="password"
                                      onChange={ this.onChange }/></Col>
