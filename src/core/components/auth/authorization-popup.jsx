@@ -13,6 +13,8 @@ export default class AuthorizationPopup extends React.Component {
     let definitions = authSelectors.shownDefinitions()
     const Auths = getComponent("auths")
 
+    // A11Y NOTE: [A] 4.1.2 Name, Role, Value
+    // - add aria-label to button used to close modal
     return (
       <div className="dialog-ux">
         <div className="backdrop-ux"></div>
@@ -21,7 +23,7 @@ export default class AuthorizationPopup extends React.Component {
             <div className="modal-ux-inner">
               <div className="modal-ux-header">
                 <h3>Available authorizations</h3>
-                <button type="button" className="close-modal" onClick={ this.close }>
+                <button aria-label="Close" type="button" className="close-modal" onClick={ this.close }>
                   <svg width="20" height="20">
                     <use href="#close" xlinkHref="#close" />
                   </svg>
