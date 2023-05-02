@@ -78,16 +78,18 @@ export default class OperationServers extends React.Component {
     const serversToDisplay = operationServers || pathServers
     const displaying = operationServers ? "operation" : "path"
 
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - use <h3> instead of <h4> to ensure heading hierarchy is consistent
     return <div className="opblock-section operation-servers">
       <div className="opblock-section-header">
         <div className="tab-header">
-          <h4 className="opblock-title">Servers</h4>
+          <h3 className="opblock-title">Servers</h3>
         </div>
       </div>
       <div className="opblock-description-wrapper">
-        <h4 className="message">
+        <h3 className="message">
           These {displaying}-level options override the global server options.
-        </h4>
+        </h3>
         <Servers
           servers={serversToDisplay}
           currentServer={this.getSelectedServer()}

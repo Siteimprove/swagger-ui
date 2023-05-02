@@ -1,3 +1,7 @@
+html, body {
+    font-size: 16px;
+}
+
 .wrapper
 {
     width: 100%;
@@ -100,7 +104,8 @@
 
     >div
     {
-        overflow: hidden;
+        // A11Y NOTE: [AA] 1.4.4 Resize text
+        // - remove overflow restrictions
         white-space: nowrap;
         text-overflow: ellipsis;
         flex: 1 1 150px;
@@ -446,9 +451,11 @@
         @include method($_color-options);
     }
 
+    // A11Y NOTE: [AA] 1.4.3 Contrast (Minimum)
+    // - update opacity to increase contrast
     &.opblock-deprecated
     {
-        opacity: .6;
+        opacity: .8;
 
         @include method($_color-disabled);
     }
@@ -574,7 +581,11 @@
 
     p
     {
+        // A11Y NOTE: [AAA] 1.4.8 Visual Presentation
+        // - use a non-fixed font-size
+        // - this needs to be addressed globally
         font-size: 14px;
+        font-size: 0.875rem;
 
         margin: 0;
 
@@ -988,6 +999,11 @@ a.nostyle {
     {
         font-weight: bold;
     }
+}
+
+p 
+{
+    line-height: 1.5;
 }
 
 span

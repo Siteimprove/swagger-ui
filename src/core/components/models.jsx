@@ -57,8 +57,10 @@ export default class Models extends Component {
     const ModelCollapse = getComponent("ModelCollapse")
     const JumpToPath = getComponent("JumpToPath", true)
 
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - use <h3> to ensure heading levels are properly structured 
     return <section className={ showModels ? "models is-open" : "models"} ref={this.onLoadModels}>
-      <h4>
+      <h3>
         <button
           aria-expanded={showModels}
           className="models-control"
@@ -69,7 +71,7 @@ export default class Models extends Component {
             <use xlinkHref={showModels ? "#large-arrow-up" : "#large-arrow-down"} />
           </svg>
         </button>
-      </h4>
+      </h3>
       <Collapse isOpened={showModels}>
         {
           definitions.entrySeq().map(([name])=>{

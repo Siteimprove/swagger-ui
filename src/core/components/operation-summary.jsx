@@ -63,10 +63,15 @@ export default class OperationSummary extends PureComponent {
     const hasSecurity = security && !!security.count()
     const securityIsOptional = hasSecurity && security.size === 1 && security.first().isEmpty()
     const allowAnonymous = !hasSecurity || securityIsOptional
+
+    // A11Y NOTE: [A] 2.5.3 Label in Name
+    // - ensure aria-label matches button text
+    const buttonAriaLabel = !showSummary ? `${method} ${path}` : `${method} ${path} ${toString(resolvedSummary || summary)}`
+
     return (
       <div className={`opblock-summary opblock-summary-${method}`} >
         <button
-          aria-label={`${method} ${path.replace(/\//g, "\u200b/")}`}
+          aria-label={buttonAriaLabel}
           aria-expanded={isShown}
           className="opblock-summary-control"
           onClick={toggleShown}

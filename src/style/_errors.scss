@@ -47,7 +47,9 @@
         }
     }
 
-    hgroup
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - reference .hgroup class instead of deprecated <hgroup> element
+    .hgroup
     {
         display: flex;
 

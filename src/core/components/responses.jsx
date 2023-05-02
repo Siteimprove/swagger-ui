@@ -90,6 +90,10 @@ export default class Responses extends React.Component {
     const regionId = createHtmlReadyId(`${method}${path}_responses`)
     const controlId = `${regionId}_select`
 
+    // A11Y NOTE: [ARIA] WAI-ARIA authoring practices
+    // - provide an aria-label for responses table
+    // A11Y NOTE: [A] 1.3.1 Info and Relationships
+    // - remove "region" role from table to ensure correct interpretation
     return (
       <div className="responses-wrapper">
         <div className="opblock-section-header">
@@ -121,7 +125,7 @@ export default class Responses extends React.Component {
 
           }
 
-          <table aria-live="polite" className="responses-table" id={regionId} role="region">
+          <table aria-label="Responses Table" aria-live="polite" className="responses-table" id={regionId}>
             <thead>
               <tr className="responses-header">
                 <td className="col_header response-col_status">Code</td>

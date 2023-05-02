@@ -39,14 +39,12 @@ export default class OperationSummaryPath extends PureComponent{
 
     const DeepLink = getComponent( "DeepLink" )
 
+    // A11Y NOTE: [A] 4.1.2 Name, Role, Value
+    // - update display of path to plaintext instead of a link to prevent nesting focusable content in a <button>
     return(
       <span className={ deprecated ? "opblock-summary-path__deprecated" : "opblock-summary-path" }
         data-path={path}>
-        <DeepLink
-            enabled={isDeepLinkingEnabled}
-            isShown={isShown}
-            path={createDeepLinkPath(`${tag}/${operationId}`)}
-            text={pathParts} />
+        {pathParts}
       </span>
 
     )

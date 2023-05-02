@@ -14,10 +14,12 @@ export class InfoBasePath extends React.Component {
   render() {
     let { host, basePath } = this.props
 
+    // A11Y NOTE: [SI] Accessibility best practices
+    // - use <div> instead of <pre> to avoid improper use of preformatted text element
     return (
-      <pre className="base-url">
+      <div className="base-url">
         [ Base URL: {host}{basePath} ]
-      </pre>
+      </div>
     )
   }
 }
@@ -126,15 +128,18 @@ export default class Info extends React.Component {
     const InfoUrl = getComponent("InfoUrl")
     const InfoBasePath = getComponent("InfoBasePath")
 
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - use <div> instead of deprecated <hgroup> element
+    // - use <h1> instead of <h2> to ensure page starts with level 1 heading
     return (
       <div className="info">
-        <hgroup className="main">
-          <h2 className="title" >{ title }
+        <div className="hgroup main">
+          <h1 className="title" >{ title }
             { version && <VersionStamp version={version}></VersionStamp> }
-          </h2>
+          </h1>
           { host || basePath ? <InfoBasePath host={ host } basePath={ basePath } /> : null }
           { url && <InfoUrl getComponent={getComponent} url={url} /> }
-        </hgroup>
+        </div>
 
         <div className="description">
           <Markdown source={ description } />

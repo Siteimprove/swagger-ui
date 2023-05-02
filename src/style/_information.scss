@@ -1,3 +1,9 @@
+// A11Y NOTE: [SI] Accessibility best practices
+// - add an alternative class for preformatted text to discourage improper <pre> use
+.preformatted-text {
+    white-space: pre;
+}
+
 .info
 {
     margin: 50px 0;
@@ -10,7 +16,9 @@
         text-align: center
     }
 
-    hgroup.main
+    // A11Y NOTE: [SI] Accessibility best practices 
+    // - reference .hgroup class instead of deprecated <hgroup> element
+    .hgroup.main
     {
         margin: 0 0 20px 0;
         a
@@ -18,13 +26,19 @@
             font-size: 12px;
         }
     }
-    pre 
+    // A11Y NOTE: [SI] Accessibility best practices
+    // - add an alternative class for preformatted text to discourage improper <pre> use
+    pre, .preformatted-text 
     {
         font-size: 14px;
     }
     p, li, table
     {
+        // A11Y NOTE: [AAA] 1.4.8 Visual Presentation
+        // - use a non-fixed font-size
+        // - this needs to be addressed globally
         font-size: 14px;
+        font-size: 0.875rem;
 
         @include text_body();
     }
@@ -92,7 +106,9 @@
                 background-color: #89bf04;
             }
 
-            pre
+            // A11Y NOTE: [SI] Accessibility best practices
+            // - add an alternative class for preformatted text to discourage improper <pre> use
+            pre, .preformatted-text
             {
                 margin: 0;
                 padding: 0;
