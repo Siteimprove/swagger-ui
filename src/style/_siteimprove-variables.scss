@@ -1,0 +1,73 @@
+$si-black: #000000;
+$si-blue: #2767f1;
+$si-blue-dark: #141155;
+$si-blue-darker: #2a384c;
+$si-blue-light: #eaf3f7;
+$si-blue-secondary: #2251ca;
+$si-orange: #fd971f;
+$si-pink: #f92672;
+$si-purple: #daa3dd;
+$si-red: #b60109;
+$si-red-secondary: #a60008;
+$si-seafoam: #99cec8;
+$si-teal: #66d9ef;
+$si-white: #ffffff;
+$si-white-secondary: #e7e7ee;
+$si-white-tertiary: #f8f8f2;
+$si-yellow: #e6db74;
+
+$si-transparent-blue: rgba(39, 103, 241, 0.1);
+$si-transparent-blue-dark: rgba(20, 17, 85, 0.1);
+$si-transparent-blue-darker: rgba(42, 56, 76, 0.1);
+$si-transparent-red: rgba(182, 1, 9, 0.1);
+$si-transparent-teal: rgba(102, 217, 239, 0.1);
+
+// Theme
+// $color-primary: #89bf04;
+// $color-secondary: #9012fe;
+$color-info: $si-blue;
+$color-warning: $si-red;
+$color-danger: $si-red;
+
+// $color-primary-hover: lighten($color-primary, .5%);
+
+$_color-post: $si-blue;
+$_color-get: $si-blue-darker;
+$_color-put: $si-blue;
+$_color-delete: $si-red;
+$_color-head: $si-orange;
+$_color-patch: $si-blue;
+// $_color-disabled: #ebebeb;
+$_color-options: $si-orange;
+
+// Buttons
+
+$btn-background-color: $si-blue;
+$btn-border-color: $si-blue;
+$btn-font-color: $si-white;
+$btn-box-shadow-color: $si-blue-darker;
+
+$btn-authorize-background-color: $si-blue;
+$btn-authorize-border-color: $si-blue;
+$btn-authorize-font-color: $si-white ;
+$btn-authorize-svg-fill-color: $si-white;
+
+// $btn-cancel-background-color: transparent;
+// $btn-cancel-border-color: $color-warning;
+// $btn-cancel-font-color: $color-warning;
+
+// $btn-execute-background-color: transparent;
+// $btn-execute-border-color: $color-info;
+// $btn-execute-font-color: $white;
+// $btn-execute-background-color-alt: $color-info;
+
+// $expand-methods-svg-fill-color: $gray-500;
+// $expand-methods-svg-fill-color-hover: $gray-800;
+
+// Information
+$info-title-small-background-color: $si-blue;
+
+// Topbar
+$topbar-background-color: $si-blue;
+$topbar-download-url-wrapper-element-border-color: $si-white-secondary;
+$topbar-download-url-button-background-color: $si-blue-dark;
