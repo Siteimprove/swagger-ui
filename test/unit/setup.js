@@ -1,5 +1,7 @@
 import { JSDOM } from "jsdom"
 import Enzyme from "enzyme"
+// Note: Despite the package name, @wojtekmaj/enzyme-adapter-react-17 v0.8.0+
+// supports both React 17 and React 18
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17"
 
 import win from "../../src/core/window"
