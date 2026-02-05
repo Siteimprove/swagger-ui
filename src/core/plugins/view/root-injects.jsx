@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import ReactDOM from "react-dom"
+import { createRoot } from "react-dom/client"
 import { compose } from "redux"
 import { connect, Provider } from "react-redux"
 import omit from "lodash/omit"
@@ -80,9 +80,19 @@ export const withMappedContainer = (getSystem, getStore, memGetComponent) => (co
   return WithMappedContainer
 }
 
+// Store root instances to avoid creating multiple roots on the same DOM node
+const rootInstances = new WeakMap()
+
 export const render = (getSystem, getStore, getComponent, getComponents) => (domNode) => {
   const App = getComponent(getSystem, getStore, getComponents)("App", "root")
-  ReactDOM.render(<App/>, domNode)
+
+  // Use React 18's createRoot API
+  let root = rootInstances.get(domNode)
+  if (!root) {
+    root = createRoot(domNode)
+    rootInstances.set(domNode, root)
+  }
+  root.render(<App/>)
 }
 
 export const getComponent = (getSystem, getStore, getComponents) => (componentName, container, config = {}) => {
